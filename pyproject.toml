@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "testtask"
+version = "0.1.0"
+description = ""
+authors = ["funnysrussianigoryan\\funnysrussianigoryan <select12345@yandex.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = {extras = ["all"], version = "^0.111.0"}
+alembic = "^1.13.1"
+sqlalchemy = "^2.0.29"
+aiosqlite = "^0.20.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

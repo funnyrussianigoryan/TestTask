@@ -7,6 +7,8 @@ from alembic import context
 
 from app.db.models import Base
 
+from app.config import settings
+
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
@@ -59,8 +61,7 @@ def run_migrations_online() -> None:
     and associate a connection with the context.
 
     """
-    dsn = "sqlite:///users_salary.db"
-    connectable = create_engine(dsn)
+    connectable = create_engine(f"sqlite:///{settings.DB_NAME}")
 
     with connectable.connect() as connection:
         context.configure(connection=connection, target_metadata=target_metadata)

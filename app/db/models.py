@@ -8,10 +8,12 @@ from sqlalchemy import (
     Integer,
     String,
     ForeignKey,
-    Date, Boolean,
+    Date,
+    Boolean,
 )
 
 Base = declarative_base()
+
 
 class User(Base):
     __tablename__ = "user"
@@ -33,6 +35,7 @@ class CurrentSalary(Base):
     salary = Column(Integer, nullable=False)
     created_at = Column(TIMESTAMP, default=datetime.utcnow)
     updated_at = Column(TIMESTAMP, default=datetime.utcnow)
+
 
 class SalaryIncrease(Base):
     __tablename__ = "salary_increase"
